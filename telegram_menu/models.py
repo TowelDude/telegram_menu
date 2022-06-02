@@ -183,13 +183,13 @@ class BaseMessage(ABC):  # pylint: disable=too-many-instance-attributes
         else:
             self.keyboard[-1].append(MenuButton(label, callback, btype, args, notification))
 
-    def edit_message(self) -> bool:
+    async def edit_message(self) -> bool:
         """Request navigation controller to update current message.
 
         Returns:
             True if message was edited
         """
-        return self.navigation.edit_message(self)
+        return await self.navigation.edit_message(self)
 
     def gen_keyboard_content(self, inlined: Optional[bool] = None) -> Union[ReplyKeyboardMarkup, InlineKeyboardMarkup]:
         """Generate keyboard.

@@ -286,7 +286,7 @@ class Test(unittest.TestCase):
         with self.assertRaises(AttributeError):
             manager.start(StartMessage, 1)
 
-        manager.updater.stop()
+        manager.application.stop()
 
     def test_4_picture_path(self) -> None:
         """Test sending valid and invalid pictures."""
